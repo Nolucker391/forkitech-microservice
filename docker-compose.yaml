@@ -6,5 +6,20 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+      - ./database:/app/database
+
     environment:
       - PYTHONUNBUFFERED=1
+
+  test_db:
+    image: postgres:latest
+    container_name: test_database
+    restart: always
+    environment:
+      - POSTGRES_USER=test_user
+      - POSTGRES_PASSWORD=test_password
+      - POSTGRES_DB=test_db
+    volumes:
+      - ./test_database/:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
