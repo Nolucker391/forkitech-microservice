@@ -45,3 +45,4 @@ pytest /tests/
 | uvicorn               | `0.34.0` |
 | pytest             | `8.3.5`  |
 | pydantic             | `2.10.6` |
+| TronPy             | `0.5.0` |
